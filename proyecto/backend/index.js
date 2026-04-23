@@ -1,7 +1,7 @@
 const http = require('http');
 const app = require('./server');
 const cors = require('cors');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3306; // cambiar a el pueto de la que la maquina este escuchando
 const host = process.env.HOST || '10.1.196.62'; // Cambiar a la ip con la de tu máquina Comando: ipconfig en el terminal
 
 // Configuración CORS --
