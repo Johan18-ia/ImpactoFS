@@ -2,12 +2,12 @@ const http = require('http');
 const app = require('./server');
 const cors = require('cors');
 const port = process.env.PORT || 3000;
-const host = process.env.HOST || '192.168.1.77';
+const host = process.env.HOST || '10.1.196.62'; // Cambiar a la ip con la de tu máquina Comando: ipconfig en el terminal
 
 // Configuración CORS --
 app.use(cors({
     origin: [
-            'http://192.168.1.77',
+            'http://10.1.196.62', // Cambiar a la ip con la de tu máquina Comando: ipconfig en el terminal
             'http://localhost',
             'http://127.0.0.1'
         ],
