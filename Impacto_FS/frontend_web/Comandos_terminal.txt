@@ -7,7 +7,7 @@ cd ./
 2 cd \Users\SENA\Documents\GitHub\Sporting\Impacto_FS\frontend_web\backend -- ingresar directamente a la carpeta de terminal
 
 --configuración de IP
-ipconfig
+ipconfigd
 
 -- iniciar el servidor
 ---Paso 1
