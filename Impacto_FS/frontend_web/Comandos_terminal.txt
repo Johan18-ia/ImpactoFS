@@ -9,5 +9,9 @@ cd ./
 --configuración de IP
 ipconfig
 
--- iniciar el servidor 
+-- iniciar el servidor
+---Paso 1
+npm i
+
+---Paso 2
 node index.js
