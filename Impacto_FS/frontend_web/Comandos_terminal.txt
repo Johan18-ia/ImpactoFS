@@ -13,5 +13,9 @@ ipconfig
 ---Paso 1
 npm i
 
+
 ---Paso 2
+Iniciar el xampp
+
+---Paso3
 node index.js
