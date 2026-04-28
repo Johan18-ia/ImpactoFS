@@ -1,0 +1,13 @@
+
+-- ingrsar a la carpeta por terminal
+--- paso 1 
+cd ./
+
+--- paso 2 
+2 cd \Users\SENA\Documents\GitHub\Sporting\Impacto_FS\frontend_web\backend -- ingresar directamente a la carpeta de terminal
+
+--configuración de IP
+ipconfig
+
+-- iniciar el servidor 
+node index.js
