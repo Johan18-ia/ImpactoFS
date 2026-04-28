@@ -20,4 +20,7 @@ Iniciar el xampp
 ---Paso3
 node index.js
 
+---Paso 4
+pausar el servidor con Ctrl + C (en caso de terminar)
+
 en caso de error consultar con Jhon.
