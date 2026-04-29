@@ -24,3 +24,22 @@ node index.js
 pausar el servidor con Ctrl + C (en caso de terminar)
 
 en caso de error consultar con Jhon.
+
+
+
+-- En caso de perder las dependencias 
+backend> npm i bcryptjs@3.0.2
+backend> npm i cors@2.8.5
+backend> npm i dotenv
+backend> npm i express@4.21.2
+backend> npm i http@0.0.1-security
+backend> npm i jsonwebtoken@9.0.2
+backend> npm i morgan@1.10.0
+backend> npm i mysql@2.18.1
+backend> npm i passport@0.4.1
+backend> npm i passport-jwt@4.0.1
+backend> npm i swagger-jsdoc
+backend> npm i swagger-ui-express
+backend> npm i -D nodemon
+backend> npm audit fix
+backend> npm audit fix --force
