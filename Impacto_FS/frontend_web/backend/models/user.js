@@ -45,7 +45,7 @@ User.findByEmail = (email, result) => {
 
 User.create = async (user, result) => {
 const hash = await bcrypt.hash(user.password, 10);
-const validRoles = ['admin', 'seller', 'customer', 'user'];
+const validRoles = ['admin', 'seller', 'customer', 'user'];  //roles de usuarios
 const role = validRoles.includes(user.role) ? user.role : 'user';
 const sql = `INSERT INTO users(
                 name,
