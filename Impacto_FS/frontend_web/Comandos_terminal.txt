@@ -49,7 +49,10 @@ backend> npm audit fix --force
 ###### Clonar un repositorio######
 git clone URL
 
-Agregar archivos al área de preparación
+###### Verificar estado del proyecto ######
+git status
+
+###### Agregar archivos al área de preparación ###### 
 
 ###### Agregar uno: #######
 Agregar todos:
