@@ -46,6 +46,53 @@ backend> npm audit fix --force
 
 /***   git manual   ***/
 
+###### Clonar un repositorio######
+git clone URL
+
+Agregar archivos al área de preparación
+
+###### Agregar uno: #######
+Agregar todos:
+git add .
+
+Guardar cambios (commit)
+git commit -m "Mensaje del commit"
+Ejemplo:
+git commit -m "Se agrega login con JWT"
+
+Ver historial de commits
+git log
+Versión corta:
+git log --oneline
+
+Subir cambios a GitHub
+
+Primera vez:
+git push -u origin main
+Después:
+git push
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 1. Verificar estado del proyecto
 git status
 
