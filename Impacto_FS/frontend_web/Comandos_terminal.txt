@@ -43,3 +43,77 @@ backend> npm i swagger-ui-express
 backend> npm i -D nodemon
 backend> npm audit fix
 backend> npm audit fix --force
+
+/***   git manual   ***/
+
+1. Verificar estado del proyecto
+git status
+
+Muestra archivos modificados, nuevos o listos para guardar.
+
+2. Inicializar Git en un proyecto
+git init
+3. Conectar con un repositorio remoto
+git remote add origin URL_DEL_REPOSITORIO
+Ejemplo:
+git remote add origin https://github.com/usuario/proyecto.git
+
+4. Agregar archivos al área de preparación
+
+Agregar uno:
+git add archivo.js
+Agregar todos:
+git add .
+
+5. Guardar cambios (commit)
+git commit -m "Mensaje del commit"
+Ejemplo:
+git commit -m "Se agrega login con JWT"
+
+6. Ver historial de commits
+git log
+Versión corta:
+git log --oneline
+
+7. Subir cambios a GitHub
+
+Primera vez:
+git push -u origin main
+Después:
+git push
+
+8. Descargar cambios del repositorio
+git pull
+
+9. Clonar un repositorio
+git clone URL
+
+10. Ver ramas
+git branch
+
+11. Crear una nueva rama
+git checkout -b nombre-rama
+
+12. Cambiar de rama
+git checkout main
+
+13. Traer cambios sin mezclar
+git fetch
+
+Flujo más usado
+git status
+git add .
+
+git commit -m "Cambios realizados"
+git push
+
+Si Git no reconoce tu usuario
+
+Configurar nombre:
+git config --global user.name "Tu Nombre"
+
+Configurar correo:
+git config --global user.email "correo@gmail.com"
+
+Ver configuración actual
+git config --list
