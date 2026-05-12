@@ -1,4 +1,5 @@
 // server.js
+// Importar rutas de productos
 const express = require('express');
 const logger = require('morgan');
 const cors = require('cors');
@@ -6,6 +7,7 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./config/swagger');
 const usersRoutes = require('./routes/userRoutes');
 const app = express();
+const productRoutes = require('./routes/productRoutes');
 
  // Middlewares globales
  app.use(logger('dev'));
@@ -38,6 +40,8 @@ const app = express();
 
  // Rutas
  app.use('/api/users', usersRoutes);
+app.use('/api/products', productRoutes);
+
 
  // Endpoints de prueba
  app.get('/', (req, res) => {
