@@ -1,3 +1,4 @@
+// Encargado JJ
 // Importar modelo Product
 const Product = require('../models/product');
 // Exportar funciones
