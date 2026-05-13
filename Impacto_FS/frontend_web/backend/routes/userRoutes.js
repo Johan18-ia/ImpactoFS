@@ -1,14 +1,29 @@
-
+// Importa express
 const express = require('express');
+
+// Crea el router de express
 const router = express.Router();
+
+// Importa el controlador de usuarios
 const userController = require('../controllers/userController');
+
+// Importa los middlewares de autenticación y roles
 const { verifyToken, authorizeRoles } = require('../middlewares/authMiddleware');
+
 /**
  * @swagger
  * tags:
  *   name: Users
  *   description: Gestión de usuarios
  */
+
+/**
+ * ---------------------------------------------------
+ * CREAR USUARIO
+ * ---------------------------------------------------
+ * Ruta para registrar usuarios nuevos
+ */
+ 
 /**
  * @swagger
  * /api/users/create:
@@ -51,18 +66,18 @@ const { verifyToken, authorizeRoles } = require('../middlewares/authMiddleware')
  *     responses:
  *       201:
  *         description: Usuario creado exitosamente
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/User'
  *       400:
  *         description: Error en los datos de entrada
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/Error'
  */
 router.post('/create', userController.register);
+
+/**
+ * ---------------------------------------------------
+ * LOGIN DE USUARIO
+ * ---------------------------------------------------
+ * Ruta para iniciar sesión
+ */
+
 /**
  * @swagger
  * /api/users/login:
@@ -78,23 +93,18 @@ router.post('/create', userController.register);
  *     responses:
  *       200:
  *         description: Login exitoso
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 token:
- *                   type: string
- *                 user:
- *                   $ref: '#/components/schemas/User'
  *       401:
  *         description: Credenciales inválidas
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/Error'
  */
 router.post('/login', userController.login);
+
+/**
+ * ---------------------------------------------------
+ * LISTAR TODOS LOS USUARIOS
+ * ---------------------------------------------------
+ * Solo admin y seller pueden acceder
+ */
+
 /**
  * @swagger
  * /api/users:
@@ -106,18 +116,25 @@ router.post('/login', userController.login);
  *     responses:
  *       200:
  *         description: Lista de usuarios obtenida exitosamente
- *         content:
- *           application/json:
- *             schema:
- *               type: array
- *               items:
- *                 $ref: '#/components/schemas/User'
  *       401:
  *         description: No autorizado
  *       403:
  *         description: Prohibido - Sin permisos suficientes
  */
-router.get('/', verifyToken, authorizeRoles(['admin', 'seller']), userController.getAllUsers);
+router.get(
+    '/',
+    verifyToken,
+    authorizeRoles(['admin', 'seller']),
+    userController.getAllUsers
+);
+
+/**
+ * ---------------------------------------------------
+ * OBTENER USUARIO POR ID
+ * ---------------------------------------------------
+ * Solo admin y seller pueden consultar
+ */
+
 /**
  * @swagger
  * /api/users/{id}:
@@ -136,16 +153,25 @@ router.get('/', verifyToken, authorizeRoles(['admin', 'seller']), userController
  *     responses:
  *       200:
  *         description: Usuario encontrado
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/User'
  *       404:
  *         description: Usuario no encontrado
  *       401:
  *         description: No autorizado
  */
-router.get('/:id', verifyToken, authorizeRoles(['admin', 'seller']), userController.getUserById);
+router.get(
+    '/:id',
+    verifyToken,
+    authorizeRoles(['admin', 'seller']),
+    userController.getUserById
+);
+
+/**
+ * ---------------------------------------------------
+ * ACTUALIZAR USUARIO
+ * ---------------------------------------------------
+ * Solo admin y seller pueden actualizar
+ */
+
 /**
  * @swagger
  * /api/users:
@@ -153,7 +179,7 @@ router.get('/:id', verifyToken, authorizeRoles(['admin', 'seller']), userControl
  *     tags: [Users]
  *     summary: Actualizar usuario
  *     security:
- *       - bearerAuth: [] 
+ *       - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -179,13 +205,26 @@ router.get('/:id', verifyToken, authorizeRoles(['admin', 'seller']), userControl
  *               password: "12345"
  *     responses:
  *       200:
- *         description: Usuario actualizado exitosamente 
+ *         description: Usuario actualizado exitosamente
  *       404:
  *         description: Usuario no encontrado
  *       401:
  *         description: No autorizado
  */
-router.put('/', verifyToken, authorizeRoles(['admin', 'seller']), userController.getUserUpdate);
+router.put(
+    '/',
+    verifyToken,
+    authorizeRoles(['admin', 'seller']),
+    userController.getUserUpdate
+);
+
+/**
+ * ---------------------------------------------------
+ * ELIMINAR USUARIO
+ * ---------------------------------------------------
+ * Solo admin puede eliminar usuarios
+ */
+
 /**
  * @swagger
  * /api/users/delete/{id}:
@@ -211,5 +250,12 @@ router.put('/', verifyToken, authorizeRoles(['admin', 'seller']), userController
  *       403:
  *         description: Prohibido - Solo administradores pueden eliminar
  */
-router.delete('/delete/:id', verifyToken, authorizeRoles(['admin']), userController.getUserDelete);
+router.delete(
+    '/delete/:id',
+    verifyToken,
+    authorizeRoles(['admin']),
+    userController.getUserDelete
+);
+
+// Exporta las rutas
 module.exports = router;
