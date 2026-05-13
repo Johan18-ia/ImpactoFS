@@ -4,8 +4,8 @@
 cd ./
 
 --- paso 2 
-2 cd \Users\SENA\Documents\GitHub\Sporting\Impacto_FS\frontend_web\backend -- ingresar directamente a la carpeta de terminal
-
+2 cd \Users\SENA\Documents\GitHub\Sporting\Impacto_FS\frontend_web\backend -- Ingresar directamente a la carpeta de terminal
+  cd Impacto_FS\frontend_web\backend -- Alternativo
 --configuración de IP
 ipconfigd
 
