@@ -1,29 +1,23 @@
 // Importa express
 const express = require('express');
-
 // Crea el router de express
 const router = express.Router();
-
 // Importa el controlador de usuarios
 const userController = require('../controllers/userController');
-
 // Importa los middlewares de autenticación y roles
 const { verifyToken, authorizeRoles } = require('../middlewares/authMiddleware');
-
 /**
  * @swagger
  * tags:
  *   name: Users
  *   description: Gestión de usuarios
  */
-
 /**
  * ---------------------------------------------------
  * CREAR USUARIO
  * ---------------------------------------------------
  * Ruta para registrar usuarios nuevos
  */
- 
 /**
  * @swagger
  * /api/users/create:
@@ -70,14 +64,12 @@ const { verifyToken, authorizeRoles } = require('../middlewares/authMiddleware')
  *         description: Error en los datos de entrada
  */
 router.post('/create', userController.register);
-
 /**
  * ---------------------------------------------------
  * LOGIN DE USUARIO
  * ---------------------------------------------------
  * Ruta para iniciar sesión
  */
-
 /**
  * @swagger
  * /api/users/login:
@@ -97,7 +89,6 @@ router.post('/create', userController.register);
  *         description: Credenciales inválidas
  */
 router.post('/login', userController.login);
-
 /**
  * ---------------------------------------------------
  * LISTAR TODOS LOS USUARIOS
@@ -127,14 +118,12 @@ router.get(
     authorizeRoles(['admin', 'seller']),
     userController.getAllUsers
 );
-
 /**
  * ---------------------------------------------------
  * OBTENER USUARIO POR ID
  * ---------------------------------------------------
  * Solo admin y seller pueden consultar
  */
-
 /**
  * @swagger
  * /api/users/{id}:
@@ -164,14 +153,12 @@ router.get(
     authorizeRoles(['admin', 'seller']),
     userController.getUserById
 );
-
 /**
  * ---------------------------------------------------
  * ACTUALIZAR USUARIO
  * ---------------------------------------------------
  * Solo admin y seller pueden actualizar
  */
-
 /**
  * @swagger
  * /api/users:
@@ -217,14 +204,12 @@ router.put(
     authorizeRoles(['admin', 'seller']),
     userController.getUserUpdate
 );
-
 /**
  * ---------------------------------------------------
  * ELIMINAR USUARIO
  * ---------------------------------------------------
  * Solo admin puede eliminar usuarios
  */
-
 /**
  * @swagger
  * /api/users/delete/{id}:
@@ -256,6 +241,5 @@ router.delete(
     authorizeRoles(['admin']),
     userController.getUserDelete
 );
-
 // Exporta las rutas
 module.exports = router;
