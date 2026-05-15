@@ -1,3 +1,5 @@
+-- BIGINT porque pueden existir muchos productos
+
 -- ============================================
 -- CREAR BASE DE DATOS
 -- ============================================
@@ -46,12 +48,12 @@ null
 USE db_node; 
 
 CREATE TABLE productos(
-    id BIGINT PRIMARY KEY AUTO_INCREMENT, -- BIGINT porque pueden existir muchos productos
+    id BIGINT PRIMARY KEY AUTO_INCREMENT, 
     nombre VARCHAR(255) NOT NULL,
-    descripcion TEXT, -- La descripción no es obligatoria
+    descripcion TEXT, 
     precio DOUBLE NOT NULL,
-    stock INT NOT NULL, -- Cantidad disponible de productos
-    imagen VARCHAR(255), -- URL o nombre de la imagen del producto
+    stock INT NOT NULL, 
+    imagen VARCHAR(255), 
     categoria VARCHAR(100),
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
