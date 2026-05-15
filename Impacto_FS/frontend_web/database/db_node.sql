@@ -1,15 +1,16 @@
-/* Crea la base de datos en SQL */
---(en caso de que exista una base de datos con el mismo nombre la elimina).
+-- ============================================
+-- CREAR BASE DE DATOS
+-- ============================================
 DROP DATABASE IF EXISTS db_node;
 CREATE SCHEMA db_node DEFAULT CHARACTER SET utf8 ;
 
+USE db_node; 
 
-/* Crea la tabla para los Usuarios*/
-
-USE db_node; --usar la base de datos
-
+-- ============================================
+-- CREAR TABLA SER USUARIOS
+-- ============================================
 CREATE TABLE users ( 
-id INT AUTO_INCREMENT PRIMARY KEY, --es int de momento pero deberia ser BIGINT 
+id INT AUTO_INCREMENT PRIMARY KEY, 
 name VARCHAR(100) NOT NULL,
 lastname VARCHAR(100) NOT NULL,
 email VARCHAR(150) NOT NULL UNIQUE,
@@ -21,7 +22,11 @@ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
 
--- Insertar un usuario por SQL
+-- ============================================
+-- INSERTAR USUARIO
+-- ============================================
+USE db_node; 
+
 INSERT INTO users VALUES (
 null,
 "Albeiro",
@@ -35,9 +40,10 @@ null,
 null
 );
 
-/* Crea la tabla para los productos*/
-
-USE db_node;
+-- ============================================
+-- CREAR TABLA DE PRODUCTOS
+-- ============================================
+USE db_node; 
 
 CREATE TABLE productos(
     id BIGINT PRIMARY KEY AUTO_INCREMENT, -- BIGINT porque pueden existir muchos productos
@@ -50,4 +56,23 @@ CREATE TABLE productos(
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         ON UPDATE CURRENT_TIMESTAMP
+);
+-- ============================================
+-- INSERTAR PRODUCTO
+-- ============================================
+INSERT INTO productos(
+    nombre,
+    descripcion,
+    precio,
+    stock,
+    imagen,
+    categoria
+)
+VALUES(
+    'Nike Air Max',
+    'Zapatos deportivos',
+    450000,
+    20,
+    'https://imagen.com/nike.jpg',
+    'Calzado'
 );
