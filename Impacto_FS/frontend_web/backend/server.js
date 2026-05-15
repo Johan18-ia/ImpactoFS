@@ -42,6 +42,10 @@ const productRoutes = require('./routes/productRoutes');
  app.use('/api/users', usersRoutes);
 app.use('/api/products', productRoutes);
 
+/*
+
+*/
+
 
  // Endpoints de prueba
  app.get('/', (req, res) => {
