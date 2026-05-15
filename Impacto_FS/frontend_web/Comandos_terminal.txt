@@ -46,11 +46,8 @@ backend> npm audit fix --force
 
 /***   git manual   ***/
 
-Configurar nombre:
-git config --global user.name "Tu Nombre"
-
-Configurar correo:
-git config --global user.email "correo@gmail.com"
+git config --global user.name "Tu Nombre"  --Configurar nombre:
+git config --global user.email "correo@gmail.com" --Configurar correo:
 
 ###### Clonar un repositorio######
 git clone URL
