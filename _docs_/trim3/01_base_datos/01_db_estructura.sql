@@ -1,11 +1,10 @@
 -- =====================================================
--- BASE DE DATOS NEXUS SPORTS
 -- Basada en la estructura de Nexus
 -- =====================================================
 
 DROP DATABASE IF EXISTS Sportys;
-CREATE DATABASE NexusSports DEFAULT CHARACTER SET utf8;
-USE NexusSports;
+CREATE DATABASE Sportys DEFAULT CHARACTER SET utf8;
+USE Sportys;
 
 -- =====================================================
 -- 1. TABLA ROL

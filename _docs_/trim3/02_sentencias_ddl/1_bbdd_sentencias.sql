@@ -10,7 +10,7 @@ SHOW DATABASES;
 -- 02. Usar Base de Datos.
 -- =====================================================
 
-USE NexusSports;
+USE Sportys;
 
 -- 03. Eliminar Base de Datos.
 -- =====================================================
