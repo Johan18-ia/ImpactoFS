@@ -3,7 +3,7 @@
 -- Basada en la estructura de Nexus
 -- =====================================================
 
-DROP DATABASE IF EXISTS NexusSports;
+DROP DATABASE IF EXISTS Sportys;
 CREATE DATABASE NexusSports DEFAULT CHARACTER SET utf8;
 USE NexusSports;
 
