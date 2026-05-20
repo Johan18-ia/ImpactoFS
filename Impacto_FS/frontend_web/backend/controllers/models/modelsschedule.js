@@ -31,7 +31,7 @@ Schedule.getAll = (result) => {
     db.query(sql, (err, res) => {
         if (err) result(err, null);
         else result(null, res);
-    });
+    }); 
 };
 
 module.exports = Schedule;

@@ -30,4 +30,4 @@ Tournament.getAll = (result) => {
     });
 };
 
-module.exports = Tournament;
+module.exports = Tournament; 
